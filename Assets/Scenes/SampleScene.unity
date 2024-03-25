@@ -571,9 +571,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1048032707}
   - component: {fileID: 1048032706}
+  - component: {fileID: 1048032708}
   m_Layer: 0
   m_Name: Map
-  m_TagString: Untagged
+  m_TagString: MapEdge
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -645,6 +646,63 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!68 &1048032708
+EdgeCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1048032705}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_EdgeRadius: 0
+  m_Points:
+  - {x: 5.396624, y: -0.90761936}
+  - {x: 5.395236, y: 2.6402051}
+  - {x: 2.4353266, y: 2.622075}
+  - {x: 2.4346523, y: 2.043886}
+  - {x: -2.8322456, y: 2.0250556}
+  - {x: -2.8555758, y: -0.28855503}
+  - {x: -3.4337199, y: -0.29616845}
+  - {x: -3.4188964, y: 2.6416292}
+  - {x: -5.184373, y: 2.6390457}
+  - {x: -5.189917, y: -0.8920163}
+  - {x: -2.2754397, y: -0.91133416}
+  - {x: -2.2608647, y: -0.30499375}
+  - {x: 3.0151505, y: -0.29003406}
+  - {x: 3.019585, y: -0.28764805}
+  - {x: 3.0319533, y: 2.084273}
+  - {x: 3.5865302, y: 2.0732338}
+  - {x: 3.5907443, y: -0.8678274}
+  - {x: 5.3828983, y: -0.868098}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1 &1564414297 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5610674831164746154, guid: daf7b2678efa1e349a5a9206d63c6af7, type: 3}
@@ -1096,7 +1154,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -8, y: 2, z: 0}
-  m_LocalScale: {x: 1.783667, y: 1.783667, z: 1.783667}
+  m_LocalScale: {x: 1.0256085, y: 1.064804, z: 1.783667}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1143,6 +1201,9 @@ MonoBehaviour:
   timeRemaining: 60
   countdownText: {fileID: 509289196}
   gameOver: 0
+  bulletPrefab: {fileID: 0}
+  bulletSpeed: 10
+  moveSpeed: 5
 --- !u!1001 &7212474317787230018
 PrefabInstance:
   m_ObjectHideFlags: 0
