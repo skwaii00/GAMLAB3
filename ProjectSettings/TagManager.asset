@@ -8,6 +8,8 @@ TagManager:
   - Square
   - Pinwheel
   - MapEdge
+  - Bullet
+  - Trap
   layers:
   - Default
   - TransparentFX

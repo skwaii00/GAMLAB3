@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -14,9 +14,10 @@ public class SquareController : MonoBehaviour
     public Text countdownText;
     public bool gameOver = false;
     public GameObject bulletPrefab;
-    public float bulletSpeed = 8f;
+    public float bulletSpeed = 10f;
     private Vector2 shootDirection;
     public float moveSpeed = 3f;
+    public PlayerData playerData;
     void Start()
     {
         StartCoroutine(Countdown());
@@ -103,10 +104,16 @@ public class SquareController : MonoBehaviour
 
     public void LoadNextScene()
     {
+        //khi chuyển sang screen tiếp theo thì tăng 1 level
+        playerData.playerLevel++;
+        // lưu thông tin playerLevel vào PlayerPrefs
+        PlayerPrefs.SetInt("PlayerLevel", playerData.playerLevel);
+        PlayerPrefs.SetInt("PlayerScore", playerData.playerScore);
+
         int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
         SceneManager.LoadScene(currentSceneIndex + 1);
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("MapEdge"))
         {
@@ -115,7 +122,7 @@ public class SquareController : MonoBehaviour
             transform.position = firstPosition;
         }
     }
-    public void OnCollisionEnter2D(Collision2D collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.tag.Equals("Circle"))
         {
